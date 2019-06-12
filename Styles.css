@@ -1,0 +1,1323 @@
+﻿body {
+	background-image: url(images/333.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:100%;        
+}
+
+html {
+height:100%;
+}
+
+ /*<!--  Шапка-->*/
+
+ /*Для піктограм соц мереж - зміна розміру при наведенні*/
+#imageseti  img {
+ -moz-transition: all 0.2s ease-out;
+ -o-transition: all 0.2s ease-out;
+ -webkit-transition: all 0.2s ease-out;
+ }
+#imageseti img:hover{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ }
+
+
+/*Модульні вікна для Виду занять*/
+.table2 {
+margin-left:42px ;
+text-align:left;
+font-style:italic;
+display: none;
+position:absolute;
+display:compact;
+
+}
+
+  /*Меню першого рівня*/
+#div1 {
+width:100%;
+max-width:1600px;
+position:relative;
+margin:0;
+padding:0;
+display:inline-block;
+}
+#table3 #tr2 td a{
+    width:100%;
+   text-decoration:none;
+   cursor:pointer;
+   padding:5px; 
+   color:white;
+   font-size:24px;   
+}
+  
+#table3  {
+    position: relative;    
+}
+
+
+/*Для модульного вікна в меню: види занять*/
+#div1 table td:hover .table2{
+    display: block;
+   color:white;  
+   z-index:10;
+   background-color:red;
+    margin-left:-5%;
+}
+
+/*Меню для адаптивного дизайну:*/
+ #menumin {
+    display:none;        
+    }
+@media screen and (max-width:850px) {
+    #thead1 {
+        display: none;
+    }
+    #thead2 {
+        display:compact;
+    }
+     #menumin {
+    display:block;  
+    }    
+      #table3 td {
+        display: block;
+        padding-left: 40%;
+        padding:10px;
+         text-align:center;
+         font-size:20px             
+    }
+    #table3 td:nth-child(odd) {
+            background-color: #fff;         
+        }
+  
+      #table3 td:nth-child(odd) a{
+          color:#f00;
+         font-weight:bolder;
+        }
+      #table3 td:before {
+        content: attr(data-label);
+        position:absolute;
+         left:2%;
+        bottom:5%;      
+        }
+      }
+
+@media screen and (max-width:600px) {
+    
+        #table3 td {
+        text-align:center;
+        padding:10px;
+        bottom:5%;
+        font-size:20px
+    }       
+        #table3 td:nth-child(odd) {
+            background-color: #fff;
+        }
+        #table3 td:nth-child(odd) a{
+          color:#f00;
+         font-weight:bolder;
+        }
+}
+
+#menumin td a {
+text-decoration:none;
+color:white;
+font-weight:bolder;
+}
+
+
+/*<!--    Слайд-ролик про види танців у редмун-->*/
+.con{
+width:60%;
+height:90%;
+border:5px solid red;
+margin:0px auto;
+overflow:hidden;
+position:relative;
+margin-left:0;
+float:left;
+}
+.img {
+position:absolute;
+width:100%;
+height:100%;
+animation:mm 15s infinite;
+opacity:0;
+}
+
+@keyframes mm{
+    10% {
+    opacity:1}
+    65% {
+        opacity: 0;
+    }
+}
+img:nth-child(0){animation-delay:0s}
+img:nth-child(1){animation-delay:5s}
+img:nth-child(2){animation-delay:10s}
+img:nth-child(3){animation-delay:20s}
+img:nth-child(4){animation-delay:25s}
+
+
+
+/*Галарея в Головному меню:*/
+#level3 {
+ height:90%;
+ max-width:100%;
+ overflow:hidden;
+ border:5px solid red;
+ background-image:url(images/galary.jpg);
+ background-size:cover; 
+ background-repeat:no-repeat;
+ background-position: center center;
+}
+
+#level3  a{
+    text-decoration:none !important;
+    font: 2em Arial, sans-serif;
+    text-shadow: red 1px 1px 0, red -1px -1px 0, 
+                 red -1px 1px 0, red 1px -1px 0;
+
+ cursor: pointer;
+   display:inline-block;
+  margin-left:35%;  
+  color:white;
+  padding-top:60px; 
+  color:white; 
+  font-size:48px;
+}
+
+/* Модальне Вікно для фото з галареї:*/                                                                        
+                                                                        /* слой затемнения */
+.dm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    /*z-index: 1000;*/  text-align: center;
+    
+}
+/* активируем слой затемнения и модальное окно */
+.dm-overlay:target {
+    display: block;
+/* анимация и время задержки */  
+    animation: fade .6s;
+}
+
+/* блочная таблица */
+.dm-table {
+    display: table;
+    width: 100%;
+    height: 100%;       
+}
+/* ячейка блочной таблицы */
+.dm-cell {
+    display: table-cell;
+    padding: 0 1em;
+    vertical-align: middle;
+    text-align: center;
+
+}
+/* модальный блок */
+.dm-modal {
+    display: inline-block;
+    padding: 10px;
+/* максимально возможная ширина */
+    max-width: 70em;
+    height:100%;
+   
+
+     
+/* внешняя тень блока */
+   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    color: #cfd8dc;
+    text-align: left;
+/* анимация и время задержки */
+  
+    animation: fade .8s;
+}
+/* анимация при появлении затемнения и блоков с содержанием */
+@-moz-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+@-webkit-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 } 
+}
+@keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+/* изображения в модальном окне */
+.dm-modal img {
+    width: 100%;
+    height: 100%;
+    text-align:center;
+}
+
+.dm-modal .close {
+ font-size:50px;
+ color:white;
+}
+/*GALARY слайд фото при натискані: */
+input[name="raz"] {display: none;}
+.gallery {position: relative;  padding-top: 75%; margin: 3em 2.3em 4.5em; background: no-repeat 50% 50%; background-size: 100% 100%;} /* стиль блока */
+.gallery label {display: inline-block; width: 20%; height: 4em; margin-bottom: -4.5em; background: no-repeat 50% 50%; background-size: 99% 97%; opacity: .5; cursor: pointer;} /* стиль миниатюры */
+.gallery label:hover {opacity: .85;} /* стиль при наведении на миниатюру */
+#raz1:checked ~ .gallery [for="raz1"], /* стиль активного пункта */
+#raz2:checked ~ .gallery [for="raz2"],
+#raz3:checked ~ .gallery [for="raz3"],
+#raz4:checked ~ .gallery [for="raz4"],
+#raz5:checked ~ .gallery [for="raz5"],
+#raz6:checked ~ .gallery [for="raz6"],
+#raz7:checked ~ .gallery [for="raz7"],
+#raz8:checked ~ .gallery [for="raz8"],
+#raz9:checked ~ .gallery [for="raz9"],
+#raz10:checked ~ .gallery [for="raz10"],
+#raz11:checked ~ .gallery [for="raz11"],
+#raz12:checked ~ .gallery [for="raz12"],
+#raz13:checked ~ .gallery [for="raz13"],
+#raz14:checked ~ .gallery [for="raz14"],
+#raz15:checked ~ .gallery [for="raz15"],
+#raz16:checked ~ .gallery [for="raz16"],
+#raz17:checked ~ .gallery [for="raz17"],
+#raz18:checked ~ .gallery [for="raz18"],
+#raz19:checked ~ .gallery [for="raz19"],
+#raz20:checked ~ .gallery [for="raz20"], 
+#raz21:checked ~ .gallery [for="raz21"],
+#raz22:checked ~ .gallery [for="raz22"],
+#raz23:checked ~ .gallery [for="raz23"],
+#raz24:checked ~ .gallery [for="raz24"],
+#raz25:checked ~ .gallery [for="raz25"],
+#raz26:checked ~ .gallery [for="raz26"],
+#raz27:checked ~ .gallery [for="raz27"],
+#raz28:checked ~ .gallery [for="raz28"],
+#raz29:checked ~ .gallery [for="raz29"],
+#raz30:checked ~ .gallery [for="raz30"],
+#raz31:checked ~ .gallery [for="raz31"],
+#raz32:checked ~ .gallery [for="raz32"],
+#raz33:checked ~ .gallery [for="raz33"],
+#raz34:checked ~ .gallery [for="raz34"],
+#raz35:checked ~ .gallery [for="raz35"],
+#raz36:checked ~ .gallery [for="raz36"],
+#raz37:checked ~ .gallery [for="raz37"],
+#raz38:checked ~ .gallery [for="raz38"],
+#raz39:checked ~ .gallery [for="raz39"],
+#raz40:checked ~ .gallery [for="raz40"],
+#raz41:checked ~ .gallery [for="raz41"],
+#raz42:checked ~ .gallery [for="raz42"],
+#raz43:checked ~ .gallery [for="raz43"],
+#raz44:checked ~ .gallery [for="raz44"],
+#raz45:checked ~ .gallery [for="raz45"],
+#raz46:checked ~ .gallery [for="raz46"],
+#raz47:checked ~ .gallery [for="raz47"],
+#raz48:checked ~ .gallery [for="raz48"],
+#raz49:checked ~ .gallery [for="raz49"],
+#raz50:checked ~ .gallery [for="raz50"],
+#raz51:checked ~ .gallery [for="raz51"],
+#raz52:checked ~ .gallery [for="raz52"],
+#raz53:checked ~ .gallery [for="raz53"],
+#raz54:checked ~ .gallery [for="raz54"],
+#raz55:checked ~ .gallery [for="raz55"],
+#raz56:checked ~ .gallery [for="raz56"],
+#raz57:checked ~ .gallery [for="raz57"],
+#raz58:checked ~ .gallery [for="raz58"],
+#raz59:checked ~ .gallery [for="raz59"],
+#raz60:checked ~ .gallery [for="raz60"],
+#raz61:checked ~ .gallery [for="raz61"],
+#raz62:checked ~ .gallery [for="raz62"],
+#raz63:checked ~ .gallery [for="raz63"],
+#raz64:checked ~ .gallery [for="raz64"],
+#raz65:checked ~ .gallery [for="raz65"],
+#raz66:checked ~ .gallery [for="raz66"],
+#raz67:checked ~ .gallery [for="raz67"],
+#raz68:checked ~ .gallery [for="raz68"],
+#raz69:checked ~ .gallery [for="raz69"],
+#raz70:checked ~ .gallery [for="raz70"],
+#raz71:checked ~ .gallery [for="raz71"],
+#raz72:checked ~ .gallery [for="raz72"],
+#raz73:checked ~ .gallery [for="raz73"],
+#raz74:checked ~ .gallery [for="raz74"],
+#raz75:checked ~ .gallery [for="raz75"],
+#raz76:checked ~ .gallery [for="raz76"],
+#raz77:checked ~ .gallery [for="raz77"],
+#raz78:checked ~ .gallery [for="raz78"],
+#raz79:checked ~ .gallery [for="raz79"],
+#raz80:checked ~ .gallery [for="raz80"],
+#raz81:checked ~ .gallery [for="raz81"],
+#raz82:checked ~ .gallery [for="raz82"],
+#raz83:checked ~ .gallery [for="raz83"],
+#raz84:checked ~ .gallery [for="raz84"],
+#raz85:checked ~ .gallery [for="raz85"],
+#raz86:checked ~ .gallery [for="raz86"],
+#raz87:checked ~ .gallery [for="raz87"],
+#raz88:checked ~ .gallery [for="raz88"],
+#raz89:checked ~ .gallery [for="raz89"],
+#raz90:checked ~ .gallery [for="raz90"],
+#raz91:checked ~ .gallery [for="raz91"],
+#raz92:checked ~ .gallery [for="raz92"],
+#raz93:checked ~ .gallery [for="raz93"],
+#raz94:checked ~ .gallery [for="raz94"],
+#raz95:checked ~ .gallery [for="raz95"],
+#raz96:checked ~ .gallery [for="raz96"],
+#raz97:checked ~ .gallery [for="raz97"],
+#raz98:checked ~ .gallery [for="raz98"],
+#raz99:checked ~ .gallery [for="raz99"],
+#raz100:checked ~ .gallery [for="raz100"],
+#raz101:checked ~ .gallery [for="raz101"],
+#raz102:checked ~ .gallery [for="raz102"] {opacity: 1; cursor: default; background-size: 100% 100%;}
+
+#raz1:checked ~ .gallery, .gallery [for="raz1"] {background-image: url(images/1.jpg);}
+#raz2:checked ~ .gallery, .gallery [for="raz2"] {background-image: url(images/2.jpg);}
+#raz3:checked ~ .gallery, .gallery [for="raz3"] {background-image: url(images/33.jpg);}
+#raz4:checked ~ .gallery, .gallery [for="raz4"] {background-image: url(images/4.jpg);}
+#raz5:checked ~ .gallery, .gallery [for="raz5"] {background-image: url(images/5.jpg);}
+#raz6:checked ~ .gallery, .gallery [for="raz6"] {background-image: url(images/6.jpg);}
+#raz7:checked ~ .gallery, .gallery [for="raz7"] {background-image: url(images/7.jpg);}
+#raz8:checked ~ .gallery, .gallery [for="raz8"] {background-image: url(images/8.jpg);}
+#raz9:checked ~ .gallery, .gallery [for="raz9"] {background-image: url(images/9.jpg);}
+#raz10:checked ~ .gallery, .gallery [for="raz10"] {background-image: url(images/10.jpg);}
+#raz11:checked ~ .gallery, .gallery [for="raz11"] {background-image: url(images/11.jpg);}
+#raz12:checked ~ .gallery, .gallery [for="raz12"] {background-image: url(images/12.jpg);}
+#raz13:checked ~ .gallery, .gallery [for="raz13"] {background-image: url(images/13.jpg);}
+#raz14:checked ~ .gallery, .gallery [for="raz14"] {background-image: url(images/14.jpg);}
+#raz15:checked ~ .gallery, .gallery [for="raz15"] {background-image: url(images/15.jpg);}
+#raz16:checked ~ .gallery, .gallery [for="raz16"] {background-image: url(images/16.jpg);}
+#raz17:checked ~ .gallery, .gallery [for="raz17"] {background-image: url(images/17.jpg);}
+#raz18:checked ~ .gallery, .gallery [for="raz18"] {background-image: url(images/18.jpg);}
+#raz19:checked ~ .gallery, .gallery [for="raz19"] {background-image: url(images/19.jpg);}
+#raz20:checked ~ .gallery, .gallery [for="raz20"] {background-image: url(images/20.jpg);}
+#raz21:checked ~ .gallery, .gallery [for="raz21"] {background-image: url(images/21.jpg);}
+#raz22:checked ~ .gallery, .gallery [for="raz22"] {background-image: url(images/22.jpg);}
+#raz23:checked ~ .gallery, .gallery [for="raz23"] {background-image: url(images/23.jpg);}
+#raz24:checked ~ .gallery, .gallery [for="raz24"] {background-image: url(images/24.jpg);}
+#raz25:checked ~ .gallery, .gallery [for="raz25"] {background-image: url(images/25.jpg);}
+#raz26:checked ~ .gallery, .gallery [for="raz26"] {background-image: url(images/26.jpg);}
+#raz27:checked ~ .gallery, .gallery [for="raz27"] {background-image: url(images/27.jpg);}
+#raz28:checked ~ .gallery, .gallery [for="raz28"] {background-image: url(images/28.jpg);}
+#raz29:checked ~ .gallery, .gallery [for="raz29"] {background-image: url(images/29.jpg);}
+#raz30:checked ~ .gallery, .gallery [for="raz30"] {background-image: url(images/30.jpg);}
+#raz31:checked ~ .gallery, .gallery [for="raz31"] {background-image: url(images/31.jpg);}
+#raz32:checked ~ .gallery, .gallery [for="raz32"] {background-image: url(images/32.jpg);}
+#raz33:checked ~ .gallery, .gallery [for="raz33"] {background-image: url(images/33.jpg);}
+#raz34:checked ~ .gallery, .gallery [for="raz34"] {background-image: url(images/34.jpg);}
+#raz35:checked ~ .gallery, .gallery [for="raz35"] {background-image: url(images/35.jpg);}
+#raz36:checked ~ .gallery, .gallery [for="raz36"] {background-image: url(images/36.jpg);}
+#raz37:checked ~ .gallery, .gallery [for="raz37"] {background-image: url(images/37.jpg);}
+#raz38:checked ~ .gallery, .gallery [for="raz38"] {background-image: url(images/38.jpg);}
+#raz39:checked ~ .gallery, .gallery [for="raz39"] {background-image: url(images/39.jpg);}
+#raz40:checked ~ .gallery, .gallery [for="raz40"] {background-image: url(images/40.jpg);}
+#raz41:checked ~ .gallery, .gallery [for="raz41"] {background-image: url(images/41.jpg);}
+#raz42:checked ~ .gallery, .gallery [for="raz42"] {background-image: url(images/42.jpg);}
+#raz43:checked ~ .gallery, .gallery [for="raz43"] {background-image: url(images/43.jpg);}
+#raz44:checked ~ .gallery, .gallery [for="raz44"] {background-image: url(images/44.jpg);}
+#raz45:checked ~ .gallery, .gallery [for="raz45"] {background-image: url(images/45.jpg);}
+#raz46:checked ~ .gallery, .gallery [for="raz46"] {background-image: url(images/46.jpg);}
+#raz47:checked ~ .gallery, .gallery [for="raz47"] {background-image: url(images/47.jpg);}
+#raz48:checked ~ .gallery, .gallery [for="raz48"] {background-image: url(images/48.jpg);}
+#raz49:checked ~ .gallery, .gallery [for="raz49"] {background-image: url(images/49.jpg);}
+#raz50:checked ~ .gallery, .gallery [for="raz50"] {background-image: url(images/50.jpg);}
+#raz51:checked ~ .gallery, .gallery [for="raz51"] {background-image: url(images/51.jpg);}
+#raz52:checked ~ .gallery, .gallery [for="raz52"] {background-image: url(images/52.jpg);}
+#raz53:checked ~ .gallery, .gallery [for="raz53"] {background-image: url(images/53.jpg);}
+#raz54:checked ~ .gallery, .gallery [for="raz54"] {background-image: url(images/54.jpg);}
+#raz55:checked ~ .gallery, .gallery [for="raz55"] {background-image: url(images/55.jpg);}
+#raz56:checked ~ .gallery, .gallery [for="raz56"] {background-image: url(images/56.jpg);}
+#raz57:checked ~ .gallery, .gallery [for="raz57"] {background-image: url(images/57.jpg);}
+#raz58:checked ~ .gallery, .gallery [for="raz58"] {background-image: url(images/58.jpg);}
+#raz59:checked ~ .gallery, .gallery [for="raz59"] {background-image: url(images/59.jpg);}
+#raz60:checked ~ .gallery, .gallery [for="raz60"] {background-image: url(images/60.jpg);}
+#raz61:checked ~ .gallery, .gallery [for="raz61"] {background-image: url(images/61.jpg);}
+#raz62:checked ~ .gallery, .gallery [for="raz62"] {background-image: url(images/62.jpg);}
+#raz63:checked ~ .gallery, .gallery [for="raz63"] {background-image: url(images/63.jpg);}
+#raz64:checked ~ .gallery, .gallery [for="raz64"] {background-image: url(images/64.jpg);}
+#raz65:checked ~ .gallery, .gallery [for="raz65"] {background-image: url(images/65.jpg);}
+#raz66:checked ~ .gallery, .gallery [for="raz66"] {background-image: url(images/66.jpg);}
+#raz67:checked ~ .gallery, .gallery [for="raz67"] {background-image: url(images/67.jpg);}
+#raz68:checked ~ .gallery, .gallery [for="raz68"] {background-image: url(images/68.jpg);}
+#raz69:checked ~ .gallery, .gallery [for="raz69"] {background-image: url(images/69.jpg);}
+#raz70:checked ~ .gallery, .gallery [for="raz70"] {background-image: url(images/70.jpg);}
+#raz71:checked ~ .gallery, .gallery [for="raz71"] {background-image: url(images/71.jpg);}
+#raz72:checked ~ .gallery, .gallery [for="raz72"] {background-image: url(images/72.jpg);}
+#raz73:checked ~ .gallery, .gallery [for="raz73"] {background-image: url(images/73.jpg);}
+#raz74:checked ~ .gallery, .gallery [for="raz74"] {background-image: url(images/74.jpg);}
+#raz75:checked ~ .gallery, .gallery [for="raz75"] {background-image: url(images/75.jpg);}
+#raz76:checked ~ .gallery, .gallery [for="raz76"] {background-image: url(images/76.jpg);}
+#raz77:checked ~ .gallery, .gallery [for="raz77"] {background-image: url(images/77.jpg);}
+#raz78:checked ~ .gallery, .gallery [for="raz78"] {background-image: url(images/78.jpg);}
+#raz79:checked ~ .gallery, .gallery [for="raz79"] {background-image: url(images/79.jpg);}
+#raz80:checked ~ .gallery, .gallery [for="raz80"] {background-image: url(images/80.jpg);}
+#raz81:checked ~ .gallery, .gallery [for="raz81"] {background-image: url(images/81.jpg);}
+#raz82:checked ~ .gallery, .gallery [for="raz82"] {background-image: url(images/82.jpg);}
+#raz83:checked ~ .gallery, .gallery [for="raz83"] {background-image: url(images/83.jpg);}
+#raz84:checked ~ .gallery, .gallery [for="raz84"] {background-image: url(images/84.jpg);}
+#raz85:checked ~ .gallery, .gallery [for="raz85"] {background-image: url(images/85.jpg);}
+#raz86:checked ~ .gallery, .gallery [for="raz86"] {background-image: url(images/86.jpg);}
+#raz87:checked ~ .gallery, .gallery [for="raz87"] {background-image: url(images/87.jpg);}
+#raz88:checked ~ .gallery, .gallery [for="raz88"] {background-image: url(images/88.jpg);}
+#raz89:checked ~ .gallery, .gallery [for="raz89"] {background-image: url(images/89.jpg);}
+#raz90:checked ~ .gallery, .gallery [for="raz90"] {background-image: url(images/90.jpg);}
+#raz91:checked ~ .gallery, .gallery [for="raz91"] {background-image: url(images/91.jpg);}
+#raz92:checked ~ .gallery, .gallery [for="raz92"] {background-image: url(images/92.jpg);}
+#raz93:checked ~ .gallery, .gallery [for="raz93"] {background-image: url(images/93.jpg);}
+#raz94:checked ~ .gallery, .gallery [for="raz94"] {background-image: url(images/94.jpg);}
+#raz95:checked ~ .gallery, .gallery [for="raz95"] {background-image: url(images/95.jpg);}
+#raz96:checked ~ .gallery, .gallery [for="raz96"] {background-image: url(images/96.jpg);}
+#raz97:checked ~ .gallery, .gallery [for="raz97"] {background-image: url(images/97.jpg);}
+#raz98:checked ~ .gallery, .gallery [for="raz98"] {background-image: url(images/98.jpg);}
+#raz99:checked ~ .gallery, .gallery [for="raz99"] {background-image: url(images/99.jpg);}
+#raz100:checked ~ .gallery, .gallery [for="raz100"] {background-image: url(images/100.jpg);}
+#raz101:checked ~ .gallery, .gallery [for="raz101"] {background-image: url(images/101.jpg);}
+#raz102:checked ~ .gallery, .gallery [for="raz102"] {background-image: url(images/102.jpg);}
+
+
+.gallery label:before { /* абзац создаёт кнопки-стрелки, которые можно и не использовать */
+ position: absolute; bottom: 20em;border-width: 2em 1em; border-style: solid;}
+#raz1:checked ~ .gallery [for="raz2"]:before, 
+#raz2:checked ~ .gallery [for="raz3"]:before,
+#raz3:checked ~ .gallery [for="raz4"]:before,
+#raz4:checked ~ .gallery [for="raz5"]:before,
+#raz5:checked ~ .gallery [for="raz6"]:before,
+#raz6:checked ~ .gallery [for="raz7"]:before,
+#raz7:checked ~ .gallery [for="raz8"]:before,
+#raz8:checked ~ .gallery [for="raz9"]:before,
+#raz9:checked ~ .gallery [for="raz10"]:before,
+#raz10:checked ~ .gallery [for="raz11"]:before,
+#raz11:checked ~ .gallery [for="raz12"]:before,
+#raz12:checked ~ .gallery [for="raz13"]:before,
+#raz13:checked ~ .gallery [for="raz14"]:before,
+#raz14:checked ~ .gallery [for="raz15"]:before,
+#raz15:checked ~ .gallery [for="raz16"]:before,
+#raz16:checked ~ .gallery [for="raz17"]:before,
+#raz17:checked ~ .gallery [for="raz18"]:before,
+#raz18:checked ~ .gallery [for="raz19"]:before,
+#raz19:checked ~ .gallery [for="raz20"]:before,
+#raz20:checked ~ .gallery [for="raz21"]:before,
+#raz21:checked ~ .gallery [for="raz22"]:before,
+#raz22:checked ~ .gallery [for="raz23"]:before,
+#raz23:checked ~ .gallery [for="raz24"]:before,
+#raz24:checked ~ .gallery [for="raz25"]:before,
+#raz25:checked ~ .gallery [for="raz26"]:before,
+#raz26:checked ~ .gallery [for="raz27"]:before,
+#raz27:checked ~ .gallery [for="raz28"]:before,
+#raz28:checked ~ .gallery [for="raz29"]:before,
+#raz29:checked ~ .gallery [for="raz30"]:before,
+#raz30:checked ~ .gallery [for="raz31"]:before,
+#raz31:checked ~ .gallery [for="raz32"]:before,
+#raz32:checked ~ .gallery [for="raz33"]:before,
+#raz33:checked ~ .gallery [for="raz34"]:before,
+#raz34:checked ~ .gallery [for="raz35"]:before,
+#raz35:checked ~ .gallery [for="raz36"]:before,
+#raz36:checked ~ .gallery [for="raz37"]:before,
+#raz37:checked ~ .gallery [for="raz38"]:before,
+#raz38:checked ~ .gallery [for="raz39"]:before,
+#raz39:checked ~ .gallery [for="raz40"]:before,
+#raz40:checked ~ .gallery [for="raz41"]:before,
+#raz41:checked ~ .gallery [for="raz42"]:before,
+#raz42:checked ~ .gallery [for="raz43"]:before,
+#raz43:checked ~ .gallery [for="raz44"]:before,
+#raz44:checked ~ .gallery [for="raz45"]:before,
+#raz45:checked ~ .gallery [for="raz46"]:before,
+#raz46:checked ~ .gallery [for="raz47"]:before,
+#raz47:checked ~ .gallery [for="raz48"]:before,
+#raz48:checked ~ .gallery [for="raz49"]:before,
+#raz49:checked ~ .gallery [for="raz50"]:before,
+#raz50:checked ~ .gallery [for="raz51"]:before,
+#raz51:checked ~ .gallery [for="raz52"]:before,
+#raz52:checked ~ .gallery [for="raz53"]:before,
+#raz53:checked ~ .gallery [for="raz54"]:before,
+#raz54:checked ~ .gallery [for="raz55"]:before,
+#raz55:checked ~ .gallery [for="raz56"]:before,
+#raz56:checked ~ .gallery [for="raz57"]:before,
+#raz57:checked ~ .gallery [for="raz58"]:before,
+#raz58:checked ~ .gallery [for="raz59"]:before,
+#raz59:checked ~ .gallery [for="raz60"]:before,
+#raz60:checked ~ .gallery [for="raz61"]:before,
+#raz61:checked ~ .gallery [for="raz62"]:before,
+#raz62:checked ~ .gallery [for="raz63"]:before,
+#raz63:checked ~ .gallery [for="raz64"]:before,
+#raz64:checked ~ .gallery [for="raz65"]:before,
+#raz65:checked ~ .gallery [for="raz66"]:before,
+#raz66:checked ~ .gallery [for="raz67"]:before,
+#raz67:checked ~ .gallery [for="raz68"]:before,
+#raz68:checked ~ .gallery [for="raz69"]:before,
+#raz69:checked ~ .gallery [for="raz70"]:before,
+#raz70:checked ~ .gallery [for="raz71"]:before,
+#raz71:checked ~ .gallery [for="raz72"]:before,
+#raz72:checked ~ .gallery [for="raz73"]:before,
+#raz73:checked ~ .gallery [for="raz74"]:before,
+#raz74:checked ~ .gallery [for="raz75"]:before,
+#raz75:checked ~ .gallery [for="raz76"]:before,
+#raz76:checked ~ .gallery [for="raz77"]:before,
+#raz77:checked ~ .gallery [for="raz78"]:before,
+#raz78:checked ~ .gallery [for="raz79"]:before,
+#raz79:checked ~ .gallery [for="raz80"]:before,
+#raz80:checked ~ .gallery [for="raz81"]:before,
+#raz81:checked ~ .gallery [for="raz82"]:before,
+#raz82:checked ~ .gallery [for="raz83"]:before,
+#raz83:checked ~ .gallery [for="raz84"]:before,
+#raz84:checked ~ .gallery [for="raz85"]:before,
+#raz85:checked ~ .gallery [for="raz86"]:before,
+#raz86:checked ~ .gallery [for="raz87"]:before,
+#raz87:checked ~ .gallery [for="raz88"]:before,
+#raz88:checked ~ .gallery [for="raz89"]:before,
+#raz89:checked ~ .gallery [for="raz90"]:before,
+#raz90:checked ~ .gallery [for="raz91"]:before,
+#raz91:checked ~ .gallery [for="raz92"]:before,
+#raz92:checked ~ .gallery [for="raz93"]:before,
+#raz93:checked ~ .gallery [for="raz94"]:before,
+#raz94:checked ~ .gallery [for="raz95"]:before,
+#raz95:checked ~ .gallery [for="raz96"]:before,
+#raz96:checked ~ .gallery [for="raz97"]:before,
+#raz97:checked ~ .gallery [for="raz98"]:before,
+#raz98:checked ~ .gallery [for="raz99"]:before,
+#raz99:checked ~ .gallery [for="raz100"]:before,
+#raz100:checked ~ .gallery [for="raz101"]:before,
+#raz101:checked ~ .gallery [for="raz102"]:before,
+#raz102:checked ~ .gallery [for="raz1"]:before {content: ""; right: -2.3em; border-color: transparent transparent transparent #686868; box-shadow: -2px 0 0 -1px #000;}
+
+#raz1:checked ~ .gallery [for="raz102"]:before,
+#raz2:checked ~ .gallery [for="raz1"]:before,
+#raz3:checked ~ .gallery [for="raz2"]:before,
+#raz4:checked ~ .gallery [for="raz3"]:before,
+#raz5:checked ~ .gallery [for="raz4"]:before,
+#raz6:checked ~ .gallery [for="raz5"]:before,
+#raz7:checked ~ .gallery [for="raz6"]:before,
+#raz8:checked ~ .gallery [for="raz7"]:before,
+#raz9:checked ~ .gallery [for="raz8"]:before,
+#raz10:checked ~ .gallery [for="raz9"]:before,
+#raz11:checked ~ .gallery [for="raz10"]:before,
+#raz12:checked ~ .gallery [for="raz11"]:before,
+#raz13:checked ~ .gallery [for="raz12"]:before,
+#raz14:checked ~ .gallery [for="raz13"]:before,
+#raz15:checked ~ .gallery [for="raz14"]:before,
+#raz16:checked ~ .gallery [for="raz15"]:before,
+#raz17:checked ~ .gallery [for="raz16"]:before,
+#raz18:checked ~ .gallery [for="raz17"]:before,
+#raz19:checked ~ .gallery [for="raz18"]:before,
+#raz20:checked ~ .gallery [for="raz19"]:before, 
+#raz21:checked ~ .gallery [for="raz20"]:before,
+#raz22:checked ~ .gallery [for="raz21"]:before,
+#raz23:checked ~ .gallery [for="raz22"]:before,
+#raz24:checked ~ .gallery [for="raz23"]:before,
+#raz25:checked ~ .gallery [for="raz24"]:before,
+#raz26:checked ~ .gallery [for="raz25"]:before,
+#raz27:checked ~ .gallery [for="raz26"]:before,
+#raz28:checked ~ .gallery [for="raz27"]:before,
+#raz29:checked ~ .gallery [for="raz28"]:before,
+#raz30:checked ~ .gallery [for="raz29"]:before,
+#raz31:checked ~ .gallery [for="raz30"]:before,
+#raz32:checked ~ .gallery [for="raz31"]:before,
+#raz33:checked ~ .gallery [for="raz32"]:before,
+#raz34:checked ~ .gallery [for="raz33"]:before,
+#raz35:checked ~ .gallery [for="raz34"]:before,
+#raz36:checked ~ .gallery [for="raz35"]:before,
+#raz37:checked ~ .gallery [for="raz36"]:before,
+#raz38:checked ~ .gallery [for="raz37"]:before,
+#raz39:checked ~ .gallery [for="raz38"]:before,
+#raz40:checked ~ .gallery [for="raz39"]:before,
+#raz41:checked ~ .gallery [for="raz40"]:before,
+#raz42:checked ~ .gallery [for="raz41"]:before,
+#raz43:checked ~ .gallery [for="raz42"]:before,
+#raz44:checked ~ .gallery [for="raz43"]:before,
+#raz45:checked ~ .gallery [for="raz44"]:before,
+#raz46:checked ~ .gallery [for="raz45"]:before,
+#raz47:checked ~ .gallery [for="raz46"]:before,
+#raz48:checked ~ .gallery [for="raz47"]:before,
+#raz49:checked ~ .gallery [for="raz48"]:before,
+#raz50:checked ~ .gallery [for="raz49"]:before,
+#raz51:checked ~ .gallery [for="raz50"]:before,
+#raz52:checked ~ .gallery [for="raz51"]:before,
+#raz53:checked ~ .gallery [for="raz52"]:before,
+#raz54:checked ~ .gallery [for="raz53"]:before,
+#raz55:checked ~ .gallery [for="raz54"]:before,
+#raz56:checked ~ .gallery [for="raz55"]:before,
+#raz57:checked ~ .gallery [for="raz56"]:before,
+#raz58:checked ~ .gallery [for="raz57"]:before,
+#raz59:checked ~ .gallery [for="raz58"]:before,
+#raz60:checked ~ .gallery [for="raz59"]:before,
+#raz61:checked ~ .gallery [for="raz60"]:before,
+#raz62:checked ~ .gallery [for="raz61"]:before,
+#raz63:checked ~ .gallery [for="raz62"]:before,
+#raz64:checked ~ .gallery [for="raz63"]:before,
+#raz65:checked ~ .gallery [for="raz64"]:before,
+#raz66:checked ~ .gallery [for="raz65"]:before,
+#raz67:checked ~ .gallery [for="raz66"]:before,
+#raz68:checked ~ .gallery [for="raz67"]:before,
+#raz69:checked ~ .gallery [for="raz68"]:before,
+#raz70:checked ~ .gallery [for="raz69"]:before,
+#raz71:checked ~ .gallery [for="raz70"]:before,
+#raz72:checked ~ .gallery [for="raz71"]:before,
+#raz73:checked ~ .gallery [for="raz72"]:before,
+#raz74:checked ~ .gallery [for="raz73"]:before,
+#raz75:checked ~ .gallery [for="raz74"]:before,
+#raz76:checked ~ .gallery [for="raz75"]:before,
+#raz77:checked ~ .gallery [for="raz76"]:before,
+#raz78:checked ~ .gallery [for="raz77"]:before,
+#raz79:checked ~ .gallery [for="raz78"]:before,
+#raz80:checked ~ .gallery [for="raz79"]:before,
+#raz81:checked ~ .gallery [for="raz80"]:before,
+#raz82:checked ~ .gallery [for="raz81"]:before,
+#raz83:checked ~ .gallery [for="raz82"]:before,
+#raz84:checked ~ .gallery [for="raz83"]:before,
+#raz85:checked ~ .gallery [for="raz84"]:before,
+#raz86:checked ~ .gallery [for="raz85"]:before,
+#raz87:checked ~ .gallery [for="raz86"]:before,
+#raz88:checked ~ .gallery [for="raz87"]:before,
+#raz89:checked ~ .gallery [for="raz88"]:before,
+#raz90:checked ~ .gallery [for="raz89"]:before,
+#raz91:checked ~ .gallery [for="raz90"]:before,
+#raz92:checked ~ .gallery [for="raz91"]:before,
+#raz93:checked ~ .gallery [for="raz92"]:before,
+#raz94:checked ~ .gallery [for="raz93"]:before,
+#raz95:checked ~ .gallery [for="raz94"]:before,
+#raz96:checked ~ .gallery [for="raz95"]:before,
+#raz97:checked ~ .gallery [for="raz96"]:before,
+#raz98:checked ~ .gallery [for="raz97"]:before,
+#raz99:checked ~ .gallery [for="raz98"]:before,
+#raz100:checked ~ .gallery [for="raz99"]:before,
+#raz101:checked ~ .gallery [for="raz100"]:before,
+#raz102:checked ~ .gallery [for="raz101"]:before
+{content: ""; left: -2.3em; border-color: transparent #686868 transparent transparent; box-shadow: 2px 0 0 -1px #000;}
+
+#raz1:checked ~ .gallery label:nth-of-type(n+6), /* абзац определяет наличие миниатюры */
+#raz2:checked ~ .gallery label:nth-of-type(n+7),
+#raz2:checked ~ .gallery label:nth-of-type(-n+1),
+#raz3:checked ~ .gallery label:nth-of-type(n+8),
+#raz3:checked ~ .gallery label:nth-of-type(-n+2),
+#raz4:checked ~ .gallery label:nth-of-type(n+9),
+#raz4:checked ~ .gallery label:nth-of-type(-n+3),
+#raz5:checked ~ .gallery label:nth-of-type(n+10),
+#raz5:checked ~ .gallery label:nth-of-type(-n+4),
+#raz6:checked ~ .gallery label:nth-of-type(n+11),
+#raz6:checked ~ .gallery label:nth-of-type(-n+5),
+#raz7:checked ~ .gallery label:nth-of-type(n+12),
+#raz7:checked ~ .gallery label:nth-of-type(-n+6),
+#raz8:checked ~ .gallery label:nth-of-type(n+13),
+#raz8:checked ~ .gallery label:nth-of-type(-n+7),
+#raz9:checked ~ .gallery label:nth-of-type(n+14),
+#raz9:checked ~ .gallery label:nth-of-type(-n+8),
+#raz10:checked ~ .gallery label:nth-of-type(n+15),
+#raz10:checked ~ .gallery label:nth-of-type(-n+9),
+#raz11:checked ~ .gallery label:nth-of-type(n+16),
+#raz11:checked ~ .gallery label:nth-of-type(-n+10),
+#raz12:checked ~ .gallery label:nth-of-type(n+17),
+#raz12:checked ~ .gallery label:nth-of-type(-n+11),
+#raz13:checked ~ .gallery label:nth-of-type(n+18),
+#raz13:checked ~ .gallery label:nth-of-type(-n+12),
+#raz14:checked ~ .gallery label:nth-of-type(n+19),
+#raz14:checked ~ .gallery label:nth-of-type(-n+13),
+#raz15:checked ~ .gallery label:nth-of-type(n+20),
+#raz15:checked ~ .gallery label:nth-of-type(-n+14),
+#raz16:checked ~ .gallery label:nth-of-type(n+21),
+#raz16:checked ~ .gallery label:nth-of-type(-n+15),
+#raz17:checked ~ .gallery label:nth-of-type(n+22),
+#raz17:checked ~ .gallery label:nth-of-type(-n+16),
+#raz18:checked ~ .gallery label:nth-of-type(n+23),
+#raz18:checked ~ .gallery label:nth-of-type(-n+17),
+#raz19:checked ~ .gallery label:nth-of-type(n+24),
+#raz19:checked ~ .gallery label:nth-of-type(-n+18),
+#raz20:checked ~ .gallery label:nth-of-type(n+25), 
+#raz20:checked ~ .gallery label:nth-of-type(-n+19),
+#raz21:checked ~ .gallery label:nth-of-type(n+26),
+#raz21:checked ~ .gallery label:nth-of-type(-n+20),
+#raz22:checked ~ .gallery label:nth-of-type(n+27),
+#raz22:checked ~ .gallery label:nth-of-type(-n+21),
+#raz23:checked ~ .gallery label:nth-of-type(n+28),
+#raz23:checked ~ .gallery label:nth-of-type(-n+22),
+#raz24:checked ~ .gallery label:nth-of-type(n+29),
+#raz24:checked ~ .gallery label:nth-of-type(-n+23),
+#raz25:checked ~ .gallery label:nth-of-type(n+30),
+#raz25:checked ~ .gallery label:nth-of-type(-n+24),
+#raz26:checked ~ .gallery label:nth-of-type(n+31),
+#raz26:checked ~ .gallery label:nth-of-type(-n+25),
+#raz27:checked ~ .gallery label:nth-of-type(n+32),
+#raz27:checked ~ .gallery label:nth-of-type(-n+26),
+#raz28:checked ~ .gallery label:nth-of-type(n+33),
+#raz28:checked ~ .gallery label:nth-of-type(-n+27),
+#raz29:checked ~ .gallery label:nth-of-type(n+34),
+#raz29:checked ~ .gallery label:nth-of-type(-n+28),
+#raz30:checked ~ .gallery label:nth-of-type(n+35),
+#raz30:checked ~ .gallery label:nth-of-type(-n+29),
+#raz31:checked ~ .gallery label:nth-of-type(n+36),
+#raz31:checked ~ .gallery label:nth-of-type(-n+30),
+#raz32:checked ~ .gallery label:nth-of-type(n+37),
+#raz32:checked ~ .gallery label:nth-of-type(-n+31),
+#raz33:checked ~ .gallery label:nth-of-type(n+38),
+#raz33:checked ~ .gallery label:nth-of-type(-n+32),
+#raz34:checked ~ .gallery label:nth-of-type(n+39),
+#raz34:checked ~ .gallery label:nth-of-type(-n+33),
+#raz35:checked ~ .gallery label:nth-of-type(n+40),
+#raz35:checked ~ .gallery label:nth-of-type(-n+34),
+#raz36:checked ~ .gallery label:nth-of-type(n+41),
+#raz36:checked ~ .gallery label:nth-of-type(-n+35),
+#raz37:checked ~ .gallery label:nth-of-type(n+42),
+#raz37:checked ~ .gallery label:nth-of-type(-n+36),
+#raz38:checked ~ .gallery label:nth-of-type(n+43),
+#raz38:checked ~ .gallery label:nth-of-type(-n+37),
+#raz39:checked ~ .gallery label:nth-of-type(n+44),
+#raz39:checked ~ .gallery label:nth-of-type(-n+38),
+#raz40:checked ~ .gallery label:nth-of-type(n+45),
+#raz40:checked ~ .gallery label:nth-of-type(-n+39),
+#raz41:checked ~ .gallery label:nth-of-type(n+46),
+#raz41:checked ~ .gallery label:nth-of-type(-n+40),
+#raz42:checked ~ .gallery label:nth-of-type(n+47),
+#raz42:checked ~ .gallery label:nth-of-type(-n+41),
+#raz43:checked ~ .gallery label:nth-of-type(n+48),
+#raz43:checked ~ .gallery label:nth-of-type(-n+42),
+#raz44:checked ~ .gallery label:nth-of-type(n+49),
+#raz44:checked ~ .gallery label:nth-of-type(-n+43),
+#raz45:checked ~ .gallery label:nth-of-type(n+50),
+#raz45:checked ~ .gallery label:nth-of-type(-n+44),
+#raz46:checked ~ .gallery label:nth-of-type(n+51),
+#raz46:checked ~ .gallery label:nth-of-type(-n+45),
+#raz47:checked ~ .gallery label:nth-of-type(n+52),
+#raz47:checked ~ .gallery label:nth-of-type(-n+46),
+#raz48:checked ~ .gallery label:nth-of-type(n+53),
+#raz48:checked ~ .gallery label:nth-of-type(-n+47),
+#raz49:checked ~ .gallery label:nth-of-type(n+54),
+#raz49:checked ~ .gallery label:nth-of-type(-n+48),
+#raz50:checked ~ .gallery label:nth-of-type(n+55),
+#raz50:checked ~ .gallery label:nth-of-type(-n+49),
+#raz51:checked ~ .gallery label:nth-of-type(n+56),
+#raz51:checked ~ .gallery label:nth-of-type(-n+50),
+#raz52:checked ~ .gallery label:nth-of-type(n+57),
+#raz52:checked ~ .gallery label:nth-of-type(-n+51),
+#raz53:checked ~ .gallery label:nth-of-type(n+58),
+#raz53:checked ~ .gallery label:nth-of-type(-n+52),
+#raz54:checked ~ .gallery label:nth-of-type(n+59),
+#raz54:checked ~ .gallery label:nth-of-type(-n+53),
+#raz55:checked ~ .gallery label:nth-of-type(n+60),
+#raz55:checked ~ .gallery label:nth-of-type(-n+54),
+#raz56:checked ~ .gallery label:nth-of-type(n+61),
+#raz56:checked ~ .gallery label:nth-of-type(-n+55),
+#raz57:checked ~ .gallery label:nth-of-type(n+62),
+#raz57:checked ~ .gallery label:nth-of-type(-n+56),
+#raz58:checked ~ .gallery label:nth-of-type(n+63),
+#raz58:checked ~ .gallery label:nth-of-type(-n+57),
+#raz59:checked ~ .gallery label:nth-of-type(n+64),
+#raz59:checked ~ .gallery label:nth-of-type(-n+58),
+#raz60:checked ~ .gallery label:nth-of-type(n+65),
+#raz60:checked ~ .gallery label:nth-of-type(-n+59),
+#raz61:checked ~ .gallery label:nth-of-type(n+66),
+#raz61:checked ~ .gallery label:nth-of-type(-n+60),
+#raz62:checked ~ .gallery label:nth-of-type(n+67),
+#raz62:checked ~ .gallery label:nth-of-type(-n+61),
+#raz63:checked ~ .gallery label:nth-of-type(n+68),
+#raz63:checked ~ .gallery label:nth-of-type(-n+62),
+#raz64:checked ~ .gallery label:nth-of-type(n+69),
+#raz64:checked ~ .gallery label:nth-of-type(-n+63),
+#raz65:checked ~ .gallery label:nth-of-type(n+70),
+#raz65:checked ~ .gallery label:nth-of-type(-n+64),
+#raz66:checked ~ .gallery label:nth-of-type(n+71),
+#raz66:checked ~ .gallery label:nth-of-type(-n+65),
+#raz67:checked ~ .gallery label:nth-of-type(n+72),
+#raz67:checked ~ .gallery label:nth-of-type(-n+66),
+#raz68:checked ~ .gallery label:nth-of-type(n+73),
+#raz68:checked ~ .gallery label:nth-of-type(-n+67),
+#raz69:checked ~ .gallery label:nth-of-type(n+74),
+#raz69:checked ~ .gallery label:nth-of-type(-n+68),
+#raz70:checked ~ .gallery label:nth-of-type(n+75),
+#raz70:checked ~ .gallery label:nth-of-type(-n+69),
+#raz71:checked ~ .gallery label:nth-of-type(n+76),
+#raz71:checked ~ .gallery label:nth-of-type(-n+70),
+#raz72:checked ~ .gallery label:nth-of-type(n+77),
+#raz72:checked ~ .gallery label:nth-of-type(-n+71),
+#raz73:checked ~ .gallery label:nth-of-type(n+78),
+#raz73:checked ~ .gallery label:nth-of-type(-n+72),
+#raz74:checked ~ .gallery label:nth-of-type(n+79),
+#raz74:checked ~ .gallery label:nth-of-type(-n+73),
+#raz75:checked ~ .gallery label:nth-of-type(n+80),
+#raz75:checked ~ .gallery label:nth-of-type(-n+74),
+#raz76:checked ~ .gallery label:nth-of-type(n+81),
+#raz76:checked ~ .gallery label:nth-of-type(-n+75),
+#raz77:checked ~ .gallery label:nth-of-type(n+82),
+#raz77:checked ~ .gallery label:nth-of-type(-n+76),
+#raz78:checked ~ .gallery label:nth-of-type(n+83),
+#raz78:checked ~ .gallery label:nth-of-type(-n+77),
+#raz79:checked ~ .gallery label:nth-of-type(n+84),
+#raz79:checked ~ .gallery label:nth-of-type(-n+78),
+#raz80:checked ~ .gallery label:nth-of-type(n+85),
+#raz80:checked ~ .gallery label:nth-of-type(-n+79),
+#raz81:checked ~ .gallery label:nth-of-type(n+86),
+#raz81:checked ~ .gallery label:nth-of-type(-n+80),
+#raz82:checked ~ .gallery label:nth-of-type(n+87),
+#raz82:checked ~ .gallery label:nth-of-type(-n+81),
+#raz83:checked ~ .gallery label:nth-of-type(n+88),
+#raz83:checked ~ .gallery label:nth-of-type(-n+82),
+#raz84:checked ~ .gallery label:nth-of-type(n+89),
+#raz84:checked ~ .gallery label:nth-of-type(-n+83),
+#raz85:checked ~ .gallery label:nth-of-type(n+90),
+#raz85:checked ~ .gallery label:nth-of-type(-n+84),
+#raz86:checked ~ .gallery label:nth-of-type(n+91),
+#raz86:checked ~ .gallery label:nth-of-type(-n+85),
+#raz87:checked ~ .gallery label:nth-of-type(n+92),
+#raz87:checked ~ .gallery label:nth-of-type(-n+86),
+#raz88:checked ~ .gallery label:nth-of-type(n+93),
+#raz88:checked ~ .gallery label:nth-of-type(-n+87),
+#raz89:checked ~ .gallery label:nth-of-type(n+94),
+#raz89:checked ~ .gallery label:nth-of-type(-n+88),
+#raz90:checked ~ .gallery label:nth-of-type(n+95),
+#raz90:checked ~ .gallery label:nth-of-type(-n+89),
+#raz91:checked ~ .gallery label:nth-of-type(n+96),
+#raz91:checked ~ .gallery label:nth-of-type(-n+90),
+#raz92:checked ~ .gallery label:nth-of-type(n+97),
+#raz92:checked ~ .gallery label:nth-of-type(-n+91),
+#raz93:checked ~ .gallery label:nth-of-type(n+98),
+#raz93:checked ~ .gallery label:nth-of-type(-n+92),
+#raz94:checked ~ .gallery label:nth-of-type(n+99),
+#raz94:checked ~ .gallery label:nth-of-type(-n+93),
+#raz95:checked ~ .gallery label:nth-of-type(n+100),
+#raz95:checked ~ .gallery label:nth-of-type(-n+94),
+#raz96:checked ~ .gallery label:nth-of-type(n+101),
+#raz96:checked ~ .gallery label:nth-of-type(-n+95),
+#raz97:checked ~ .gallery label:nth-of-type(n+102),
+#raz97:checked ~ .gallery label:nth-of-type(-n+96),
+#raz98:checked ~ .gallery label:nth-of-type(n+103),
+#raz98:checked ~ .gallery label:nth-of-type(-n+97),
+#raz99:checked ~ .gallery label:nth-of-type(n+104),
+#raz99:checked ~ .gallery label:nth-of-type(-n+98),
+#raz100:checked ~ .gallery label:nth-of-type(n+105),
+#raz100:checked ~ .gallery label:nth-of-type(-n+99),
+#raz101:checked ~ .gallery label:nth-of-type(n+106),
+#raz101:checked ~ .gallery label:nth-of-type(-n+100),
+#raz102:checked ~ .gallery label:nth-of-type(-n+101) {width: 0%;}
+
+
+
+
+
+/*Футер*/
+#footer {
+    
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background:#808080; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    position:fixed;
+    
+}
+
+/*Сторінка про нас*/
+.about {
+background-image:url(images/about.jpg);
+background-repeat:no-repeat;
+height:90%;
+width:99%;
+margin:0px auto;
+position:relative;
+ display: table;
+border: 5px solid red;
+vertical-align:middle;
+background-size: 100%;
+
+}
+
+
+
+/* СТОРІНКА Oренда пілону*/
+/*КАРУСЕЛЬ*/
+.wrappilon {
+height: 100%;position: relative;
+border: 3px solid red;
+max-width: 1366px;
+
+
+}
+.wrappilon > input {
+display: none;
+}
+.wrappilon .controlpilon {
+position: absolute;
+margin-left: -20px;
+left: 50%;
+}
+
+.wrappilon .controlpilon label {
+cursor: pointer;
+display: inline-block;
+height:7px;
+margin: 7px;
+position: relative;
+width: 7px;
+border: 2px solid red;
+border-radius: 30%/10px;
+}
+
+#pointp1:checked ~ .controlpilon label:nth-of-type(2),
+#pointp2:checked ~ .controlpilon label:nth-of-type(1)
+ {
+background-color:red;
+}
+
+.controlspilon label:hover {
+    opacity: 0.8;
+}
+
+
+
+#pointp1:checked ~ .controlspilon label:nth-child(2),
+#pointp2:checked ~ .controlspilon label:nth-child(1)
+ {
+    width:0;
+    height:0;
+border-top:15px solid transparent;
+border-left:15px solid red;
+border-bottom:15px solid transparent;
+float:right;
+margin-right:30%;
+display:block;
+
+}
+
+
+
+
+
+.sliderpilon {
+height: 85%;
+overflow: hidden;
+position: relative;
+width: 100%;
+}
+
+.slidespilon {
+height: 100%;
+opacity: 0;
+position: absolute;
+width: 100%;
+z-index: 0;
+background-size: contain;
+background-repeat:no-repeat;
+margin:auto;  
+}
+.pilon1 { background-image: url(images/pilon1.jpg); }
+.pilon2 { background-image: url(images/pilon2.jpg); }
+
+#pointp1:checked ~ .sliderpilon > .pilon1,
+#pointp2:checked ~ .sliderpilon > .pilon2
+  {
+opacity: 1;
+z-index: 1;
+background-size:contain;
+background-position:center;
+}
+
+@media screen and (max-width:1366px){
+.wrappilon{
+max-width: 550px;
+height: 320px;
+}
+.slidespilon{
+background-size: cover;
+}
+}
+
+@media screen and (max-width: 400px){
+.wrappilon{
+max-width: 320px;
+height: 180px;
+}
+.slidespilon{
+background-size: cover;
+}
+}
+
+/* СТОРІНКА Oренда приміщення*/
+/*КАРУСЕЛЬ*/
+.wrap {
+height: 100%;position: relative;
+border: 3px solid red;
+max-width: 1366px;
+
+
+}
+.wrap > input {
+display: none;
+}
+.wrap .control {
+position: absolute;
+margin-left: -130px;
+left: 50%;
+}
+
+.wrap .control label {
+cursor: pointer;
+display: inline-block;
+height:7px;
+margin: 7px;
+position: relative;
+width: 7px;
+border: 2px solid red;
+border-radius: 30%/10px;
+}
+
+#point1:checked ~ .control label:nth-of-type(2),
+#point2:checked ~ .control label:nth-of-type(3),
+#point3:checked ~ .control label:nth-of-type(4),
+#point4:checked ~ .control label:nth-of-type(5),
+#point5:checked ~ .control label:nth-of-type(6),
+#point6:checked ~ .control label:nth-of-type(7),
+#point7:checked ~ .control label:nth-of-type(8),
+#point8:checked ~ .control label:nth-of-type(9),
+#point9:checked ~ .control label:nth-of-type(1) {
+background-color:red;
+}
+
+.controls label:hover {
+    opacity: 0.8;
+}
+#point1:checked ~ .controls label:nth-child(2),
+#point2:checked ~ .controls label:nth-child(3),
+#point3:checked ~ .controls label:nth-child(4),
+#point4:checked ~ .controls label:nth-child(5),
+#point5:checked ~ .controls label:nth-child(6),
+#point6:checked ~ .controls label:nth-child(7),
+#point7:checked ~ .controls label:nth-child(8),
+#point8:checked ~ .controls label:nth-child(9),
+#point9:checked ~ .controls label:nth-child(1)
+ {
+width:0;
+height:0;
+border-top:15px solid transparent;
+border-left:15px solid red;
+border-bottom:15px solid transparent;
+float:right;
+/*margin-right:20px;*/
+display:block;
+position:relative;
+padding-right:1%;
+float:right;
+}
+
+#point1:checked ~ .controls label:nth-child(9),
+#point2:checked ~ .controls label:nth-child(1),
+#point3:checked ~ .controls label:nth-child(2),
+#point4:checked ~ .controls label:nth-child(3),
+#point5:checked ~ .controls label:nth-child(4),
+#point6:checked ~ .controls label:nth-child(5),
+#point7:checked ~ .controls label:nth-child(6),
+#point8:checked ~ .controls label:nth-child(7),
+#point9:checked ~ .controls label:nth-child(8) {
+width:0;
+height:0;
+border-top:15px solid transparent;
+border-right:15px solid red;
+border-bottom:15px solid transparent;
+float:left;
+padding-left:5px;
+display:block;
+}
+
+.slider {
+height: 85%;
+overflow: hidden;
+position: relative;
+width: 100%;
+}
+
+.slides {
+height: 100%;
+opacity: 0;
+position: absolute;
+width: 100%;
+z-index: 0;
+background-size: contain;
+background-repeat:no-repeat;
+margin:auto;  
+}
+.zal1 { background-image: url(images/zal1.jpg); }
+.zal2 { background-image: url(images/zal2.jpg); }
+.zal3 { background-image: url(images/zal3.jpg); }
+.zal4 { background-image: url(images/zal4.jpg); }
+.zal5 { background-image: url(images/zal5.jpg); }
+.zal6 { background-image: url(images/zal6.jpg); }
+.zal7 { background-image: url(images/zal7.jpg); }
+.zal8 { background-image: url(images/zal8.jpg); }
+.zal9 { background-image: url(images/zal9.jpg); }
+
+#point1:checked ~ .slider > .zal1,
+#point2:checked ~ .slider > .zal2,
+#point3:checked ~ .slider > .zal3,
+#point4:checked ~ .slider > .zal4,
+#point5:checked ~ .slider > .zal5,
+#point6:checked ~ .slider > .zal6, 
+#point7:checked ~ .slider > .zal7,
+#point8:checked ~ .slider > .zal8,
+#point9:checked ~ .slider > .zal9  {
+opacity: 1;
+z-index: 1;
+background-size:contain;
+background-position:center;
+}
+
+@media screen and (max-width:1366px){
+.wrap{
+max-width: 550px;
+height: 320px;
+}
+.slides{
+background-size: cover;
+}
+}
+
+@media screen and (max-width: 400px){
+.wrap{
+max-width: 320px;
+height: 180px;
+}
+.slides{
+background-size: cover;
+}
+}
+
+
+/*СТОРІНКА Контакти:*/
+/*КАРУСЕЛЬ Контакти*/
+.wrap1 {
+position: relative;
+border: 3px solid red;
+max-width: 1366px;
+background-color:#e878fe;
+float:left;
+height:100%;
+width:100%
+}
+.wrap1 > input {
+display: none;
+}
+.wrap1 .control {
+position: absolute;
+margin-left: -120px;
+left: 50%;
+
+}
+.wrap1 .control label {
+cursor: pointer;
+display: inline-block;
+height: 10px;
+margin: 10px;
+position: relative;
+width: 10px;
+border: 2px solid red;
+border-radius: 30%/10px;
+top:5px;
+
+}
+#p1:checked ~ .control label:nth-of-type(1),
+#p2:checked ~ .control label:nth-of-type(2),
+#p3:checked ~ .control label:nth-of-type(3),
+#p4:checked ~ .control label:nth-of-type(4),
+#p5:checked ~ .control label:nth-of-type(5),
+#p6:checked ~ .control label:nth-of-type(6) ,
+#p7:checked ~ .control label:nth-of-type(7) {
+background-color:red;
+}
+
+.controls label:hover {
+    opacity: 0.8;
+}
+#p1:checked ~ .controls label:nth-child(2),
+#p2:checked ~ .controls label:nth-child(3),
+#p3:checked ~ .controls label:nth-child(4),
+#p4:checked ~ .controls label:nth-child(5),
+#p5:checked ~ .controls label:nth-child(6),
+#p6:checked ~ .controls label:nth-child(7),
+#p7:checked ~ .controls label:nth-child(1)
+ {
+width:0;
+height:0;
+border-top:15px solid transparent;
+border-left:15px solid red;
+border-bottom:15px solid transparent;
+float:right;
+margin-right:5px;
+display:block;
+position:relative;
+padding-right:1%;
+top:5px;
+
+}
+#p1:checked ~ .controls label:nth-child(7),
+#p2:checked ~ .controls label:nth-child(1),
+#p3:checked ~ .controls label:nth-child(2),
+#p4:checked ~ .controls label:nth-child(3),
+#p5:checked ~ .controls label:nth-child(4),
+#p6:checked ~ .controls label:nth-child(5),
+#p7:checked ~ .controls label:nth-child(6) {
+width:0;
+height:0;
+border-top:15px solid transparent;
+border-right:15px solid red;
+border-bottom:15px solid transparent;
+float:left;
+padding-left:5px;
+display:block;
+position:relative;
+top:5px;
+}
+
+.slides1 {
+height: 100%;
+width:100%;
+opacity: 0;
+position: absolute;
+z-index: 0;
+background-size: contain;
+background-repeat:no-repeat;
+background-position:center;
+
+}
+.contact1 { background-image: url(images/contact1.jpg); }
+.contact2{ background-image: url(images/contact2.jpg); }
+.contact3 { background-image: url(images/contact3.jpg); }
+.contact4 { background-image: url(images/contact4.jpg);}
+.contact5 { background-image: url(images/contact5.jpg); }
+.contact6 { background-image: url(images/contact6.jpg); }
+.contact7 { background-image: url(images/contact7.jpg); }
+
+#p1:checked ~ .slider > .contact1,
+#p2:checked ~ .slider > .contact2,
+#p3:checked ~ .slider > .contact3,
+#p4:checked ~ .slider > .contact4,
+#p5:checked ~ .slider > .contact5,
+#p6:checked ~ .slider > .contact6,
+#p7:checked ~ .slider > .contact7
+ {
+opacity: 1;
+z-index: 1;
+
+}
+
+@media screen and (max-width:1366px){
+.wrap1{
+max-width: 730px;
+height: 530px;
+}
+.slides1{
+background-size: cover;
+}
+}
+
+@media screen and (max-width: 400px){
+.wrap1{
+max-width: 320px;
+height: 180px;
+}
+.slides1{
+background-size: cover;
+}
+}
+
